@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Movie Recommendation System </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Customize styles -->
+    <link href="style.css" rel="stylesheet"/>
+    <!-- font awesome styles -->
+	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<!--[if IE 7]>
+			<link href="css/font-awesome-ie7.min.css" rel="stylesheet">
+		<![endif]-->
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+	<!-- Favicons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    
+    
+    
+    <script type="text/javascript">
+function toggleVisibility() {
+
+
+    document.getElementById("signup").style.display = "";
+    
+
+}
+</script>
+  </head>
+<body>
+
+
+<div id="gototop"> </div>
+<header id="header">
+<div class="row">
+	<div class="span4">
+	<h1>
+	<!-- <a class="logo" href="index.html">
+		<img src="assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
+		
+	</a> -->
+	
+	</h1>
+	
+	</div>
+	<div class="span4">
+	
+	</div>
+	<center>
+	<img src="assets/img/title.png" width="1000px">
+	</center>
+</div>
+</header>
+
+<!--
+Navigation Bar Section 
+-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+    <li class="active"><a href="index.html">Home</a></li>
+    <li class="active"><a href="#signup" onclick="toggleVisibility()"> Free Register </a> </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin Login<span class="caret"></span></a>
+      	<div class="dropdown-menu">
+				<form class="form-horizontal loginFrm" action="Login" method="post">
+				  <div class="control-group">
+					<input type="text" class="span2" id="inputEmail" name="adminid" placeholder="Admin Id">
+				  </div>
+				  <div class="control-group">
+					<input type="password" class="span2" id="inputPassword" name="password" placeholder="Password">
+				  </div>
+				  <div class="control-group">
+					<label class="checkbox">
+					<input type="checkbox"> Remember me
+					</label>
+					<button type="submit" class="shopBtn btn-block">Sign in</button>
+				  </div>
+				</form>
+				</div>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">User Login<span class="caret"></span></a>
+      	<div class="dropdown-menu">
+				<form class="form-horizontal loginFrm" action="UserLogin" method="post">
+				  <div class="control-group">
+					<input type="text" class="span2" id="inputEmail" name="userid" placeholder="User Id">
+				  </div>
+				  <div class="control-group">
+					<input type="password" class="span2" id="inputPassword" name="password" placeholder="Password">
+				  </div>
+				  <div class="control-group">
+					<label class="checkbox">
+					<input type="checkbox"> Remember me
+					</label>
+					<button type="submit" name="submit" class="shopBtn btn-block" value="SignIn">Sign in</button>
+				  </div>
+				</form>
+				</div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<!-- 
+Body Section 
+-->
+	
+	<div class="well np">
+		<div id="myCarousel" class="carousel slide homCar">
+            <div class="carousel-inner">
+			  <div class="item">
+                <img style="width:100%" src="assets/img/tv1.jpg" alt="bootstrap ecommerce templates">
+                <div class="carousel-caption">
+                      <!-- <h4> shopping cart TV</h4> -->
+                      
+                </div>
+              </div>
+			  <div class="item">
+                <img style="width:100%" src="assets/img/phone2.jpg" alt="bootstrap ecommerce templates">
+                <div class="carousel-caption">
+                    <!--   <h4>shopping cart Phone's</h4> -->
+                   
+                </div>
+              </div>
+			  <div class="item active">
+                <img style="width:100%" src="assets/img/fridge3.jpg" alt="bootstrap ecommerce templates">
+                <div class="carousel-caption">
+                   <!--    <h4>shopping cart Refrigerator</h4> -->
+                      
+                </div>
+              </div>
+              <div class="item">
+                <img style="width:100%" src="assets/img/lap1.jpg" alt="bootstrap templates">
+                <div class="carousel-caption">
+                     <!--  <h4>shopping cart LAPTOPS</h4> -->
+                     
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+          </div>
+        </div>
+
+<!-- <div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			 <div id="signup" style="display: none">   
+<h3 style="text-align: center; font-weight: bold;">Registration</h3>	
+	<hr class="soft"/>
+	<div class="well">
+	<form class="form-horizontal" action="UserLogin" method="post">
+		<h3>Your Personal Details</h3>
+
+		<div class="form-group">
+			<label for="sel1">Title</label>
+			<select name="Title">
+				<option value="">-</option>
+				<option value="Mr.">Mr.</option>
+				<option value="Mrs">Mrs</option>
+				<option value="Miss">Miss</option>
+			</select>
+		  </div>
+
+		<div class="control-group">
+			<label class="control-label" for="inputFname">User name <sup>*</sup></label>
+			<div class="controls">
+			  <input type="text" id="inputFname" name="user_name" placeholder="User Name">
+			</div>
+		 </div>
+		 
+		<div class="control-group">
+		<label class="control-label" for="inputEmail">Email <sup>*</sup></label>
+		<div class="controls">
+		  <input type="text" placeholder="Email" name="user_email" >
+		</div>
+	  </div>	  
+		<div class="control-group">
+		<label class="control-label">Password <sup>*</sup></label>
+		<div class="controls">
+		  <input type="password" placeholder="Password"  name="user_password">
+		</div>
+	  </div>
+		<div class="control-group">
+		<label class="control-label">Date of Birth <sup>*</sup></label>
+		<div class="controls">
+		  <input type="date" placeholder="DOB"  name="DOB">
+		</div>
+	  </div>
+	<div class="control-group">
+		<div class="controls">
+		 <input type="submit" name="submit" value="Register" class="exclusive shopBtn">
+		</div>
+	</div>
+	</form>
+</div>
+</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+</div> -->
+
+
+<div class="container" style="background: lightblue;">
+	<div class="row">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+
+			<div id="signup" style="display: none;">
+					<h2 style="text-align: center;font-weight: bold; color: darkred;">Registration</h2>
+					<form class="form-horizontal" action="UserLogin" method="post">
+
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-4">
+										<label for="sel1" class="control-label" style="text-align: center; font-size: 18px; color: brown;">Title</label>
+								</div>
+								<div class="col-sm-8">
+									<select name="Title" class="form-control">
+											<option value="">-</option>
+											<option value="Mr.">Mr.</option>
+											<option value="Mrs">Mrs</option>
+											<option value="Miss">Miss</option>
+										</select>
+								</div>
+							</div>
+						  </div>
+					  <div class="form-group">
+						  <div class="row">
+							  <div class="col-sm-4">
+									<label class="control-label" for="username" style="text-align: center; font-size: 18px; color: brown;">Username:</label>
+							  </div>
+							  <div class="col-sm-8">
+									<input type="text" class="form-control" id="name" placeholder="Enter username" name="user_name" style="height: 35px;">
+							  </div>
+						  </div>
+					  </div>
+					  <div class="form-group">
+							<div class="row">
+								<div class="col-sm-4">
+									  <label class="control-label" for="email" style="text-align: center; font-size: 18px; color: brown;">Email:</label>
+								</div>
+								<div class="col-sm-8">
+									  <input type="email" class="form-control" id="email" placeholder="Enter email" name="user_email" style="height: 35px;">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-sm-4">
+										<label class="control-label" for="password" style="text-align: center; font-size: 18px; color: brown;">Password:</label>
+								</div>
+								<div class="col-sm-8">
+										<input type="password" class="form-control" id="email" placeholder="Enter password" name="user_password" style="height: 35px;">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+								<div class="row">
+									<div class="col-sm-4">
+											<label class="control-label" for="dob" style="text-align: center; font-size: 18px; color: brown;">Date of Birth:</label>
+									</div>
+									<div class="col-sm-8">
+											<input type="date" class="form-control" id="dob" placeholder="DOB" name="DOB" style="height: 35px;">
+									</div>
+								</div>
+							</div>
+					  <div class="form-group">        
+						<div class="col-sm-offset-2 col-sm-10" style="text-align: center;">
+							<input type="submit" name="submit" value="Register" class="exclusive shopBtn">
+						</div>
+					  </div>
+					</form>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+  </div>
+
+
+
+<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="assets/js/shop.js"></script>
+  </body>
+</html>

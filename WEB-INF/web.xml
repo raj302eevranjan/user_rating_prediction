@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+    <display-name>DM_IdentityBased</display-name>
+
+    <!-- All About Admin -->
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>com.admin.Login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern> 
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Upload_Mov_List</servlet-name>
+		<servlet-class>com.admin.Upload_Mov_List</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Upload_Mov_List</servlet-name>
+		<url-pattern>/Upload_Mov_List</url-pattern> 
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Unintersted_Items</servlet-name>
+		<servlet-class>com.admin.Unintersted_Items</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Unintersted_Items</servlet-name>
+		<url-pattern>/Unintersted_Items</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>UserLogin</servlet-name>
+		<servlet-class>com.user.UserLogin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserLogin</servlet-name>
+		<url-pattern>/UserLogin</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	
+	
+		<servlet-name>Select_Category</servlet-name>
+		<servlet-class>com.user.Select_Category</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Select_Category</servlet-name>
+		<url-pattern>/Select_Category</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ChangePass</servlet-name>
+		<servlet-class>com.admin.ChangePass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChangePass</servlet-name>
+		<url-pattern>/ChangePass</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Add_Item</servlet-name>
+		<servlet-class>com.admin.Add_Item</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Add_Item</servlet-name>
+		<url-pattern>/Add_Item</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Upload_Dataset</servlet-name>
+		<servlet-class>com.admin.Upload_Dataset</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Upload_Dataset</servlet-name>
+		<url-pattern>/Upload_Dataset</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Update_Item</servlet-name>
+		<servlet-class>com.admin.Update_Item</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Update_Item</servlet-name>
+		<url-pattern>/Update_Item</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+		<servlet-name>Change_User_Pass</servlet-name>
+		<servlet-class>com.user.Change_User_Pass</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Change_User_Pass</servlet-name>
+		<url-pattern>/Change_User_Pass</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>ReviewList</servlet-name>
+		<servlet-class>com.admin.ReviewList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReviewList</servlet-name>
+		<url-pattern>/ReviewList</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+		<servlet-name>Add_Category</servlet-name>
+		<servlet-class>com.admin.Add_Category</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Add_Category</servlet-name>
+		<url-pattern>/Add_Category</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Usre_Rate</servlet-name>
+		<servlet-class>com.admin.Usre_Rate</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Usre_Rate</servlet-name>
+		<url-pattern>/Usre_Rate</url-pattern>
+	</servlet-mapping>
+	
+	
+</web-app>
