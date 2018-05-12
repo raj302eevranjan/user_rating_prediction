@@ -105,32 +105,29 @@ if(no==2)
 			
 			
 			<div class="container-fluid">
-				<!-- <div class="row"> -->
 					<%
 		 String item_code= "2";
 			ResultSet rs1=UserDao.get_Cart_Details();
+			int count = 0;
 			while(rs1.next())
 			{   
+				count++;
+				if(count%2 != 0){
 		  %>
+		  <div class="row" style="margin-left: 0px; margin-right: 0px;">
 			<div class="col-sm-6">
 				<form class="form-horizontal qtyFrm" action="<%=request.getContextPath() %>/Select_Category"  method="get">
-			
-					<div class="span9">
+					<div>
 			
 			<div class="well well-small">
 			<div class="row-fluid">
-					
-					<div class="span7">
-		
-						<h3>Name of the Movie   <%=rs1.getString(3)%></h3>
+						
+						<h3 style="text-align: center;">Name of the Movie   <%=rs1.getString(3)%></h3>
 						<hr class="soft"/>  
 						<input type="hidden" name="cart_id" value="<%=rs1.getString(1)%>">
 						<input type="hidden" name="item_id" value="<%=rs1.getString(4)%>">
 						<input type="hidden" name="cat_id" value="<%=rs1.getString(5)%>">
-							
-					</div>
-					
-					
+											
 					</div>
 					
 					<div id="myTabContent" class="tab-content tabWrapper">
@@ -157,9 +154,9 @@ if(no==2)
 						</table>
 						</div>
 						</div>
-						
-						<button type="submit" class="shopBtn" name="submit" value="Buy">Rate</button>
-						
+						<div class="row" style="text-align: center; margin-top: 20px;">
+							<button type="submit" class="shopBtn" name="submit" value="Buy">Rate</button>
+						</div>
 							<!-- <button type="submit" class="shopBtn" name="submit" value="Remove"><span class=" icon-shopping-cart"></span>Remove</button>
 					 -->
 		</div>
@@ -167,9 +164,67 @@ if(no==2)
 		
 		
 		</form>
-			</div>
+			  </div>
+		  <%
+				}
+				else{
+		  %>
+		  <div class="col-sm-6">
+			<form class="form-horizontal qtyFrm" action="<%=request.getContextPath() %>/Select_Category"  method="get">
+			
+				<div>
+		
+		<div class="well well-small">
+		<div class="row-fluid">
+					
+					<h3 style="text-align: center;">Name of the Movie   <%=rs1.getString(3)%></h3>
+					<hr class="soft"/>  
+					<input type="hidden" name="cart_id" value="<%=rs1.getString(1)%>">
+					<input type="hidden" name="item_id" value="<%=rs1.getString(4)%>">
+					<input type="hidden" name="cat_id" value="<%=rs1.getString(5)%>">
+										
+				</div>
+				
+				<div id="myTabContent" class="tab-content tabWrapper">
+				<div class="tab-pane fade active in" id="home">
+				  <h4>Movie Information</h4>
+					<table class="table table-striped">
+					<tbody>
+					<tr class="techSpecRow"><td class="techSpecTD1">Name of the Movie :</td><td class="techSpecTD2"><%=rs1.getString(3)%></td></tr>
+					<tr class="techSpecRow"><td class="techSpecTD1">Movie Collection:</td><td class="techSpecTD2"><%=rs1.getString(6)%></td></tr>
+					<%-- <tr class="techSpecRow"><td class="techSpecTD1">Quantity:</td><td class="techSpecTD2"><%=rs1.getString(7)%></td></tr>
+					<tr class="techSpecRow"><td class="techSpecTD1">Total :</td><td class="techSpecTD2"><%=rs1.getString(8)%> Rs</td></tr>
+					 --%>
+					
+					<tr class="techSpecRow"><td class="techSpecTD1">Rate It:</td><td class="techSpecTD2">
+														<div class="left mr10 mb5">
+															<a href="#" abs absolute barbecues
+																Menu" data-result-type="ResCard_Menu"
+																class="result-menu btn btn-small cblack"> <input type="text" name="user_rate" class="rating rating5"   /> </a>
+															
+														</div>
+														</td></tr>
+					
+					</tbody>
+					</table>
+					</div>
+					</div>
+					<div class="row" style="text-align: center; margin-top: 20px;">
+						<button type="submit" class="shopBtn" name="submit" value="Buy">Rate</button>
+					</div>
+						<!-- <button type="submit" class="shopBtn" name="submit" value="Remove"><span class=" icon-shopping-cart"></span>Remove</button>
+				 -->
+	</div>
+	</div>
+	
+	
+	</form>
+		  </div>
+		  </div>
+		  <hr style="margin-top: 0px;">
             <%
 			}
+		}
 			%>
 				<!-- </div> -->
 			</div>
