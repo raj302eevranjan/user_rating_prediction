@@ -91,7 +91,7 @@
             <div class="container" id="showing_all_movie_on_login">
 
 
-            <h3> <%=cat_name %> Movies  testing the second change.</h3>
+            <h3> <%=cat_name %> Movies</h3>
             <%
                 ResultSet rs1=AdminDAO.get_selected_category_Item_Details(cat_code);
                 int id=0;

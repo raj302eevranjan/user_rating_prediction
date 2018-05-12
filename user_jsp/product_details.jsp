@@ -62,10 +62,8 @@
                       String Groupname="",Groupdesc="";
                       while(rs1.next())
                       {
-                        
                         prizes=rs1.getString(5);
                         rate=rs1.getString(7);
-                      
                       %>
 
                       <p style="font-size: 20px; text-align: center;">Name of the Movie&nbsp;&nbsp;:&nbsp;&nbsp;<%=rs1.getString(2)%></p>
