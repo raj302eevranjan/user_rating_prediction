@@ -6,7 +6,17 @@
 <head>
   <link href="<%=request.getContextPath() %>/assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Customize styles -->
-    <link href="style.css" rel="stylesheet"/>
+	<link href="style.css" rel="stylesheet"/>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!-- font awesome styles -->
 	<link href="<%=request.getContextPath() %>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 		<!--[if IE 7]>
@@ -107,58 +117,44 @@ ResultSet rs=(ResultSet)AdminDAO.getCategory_Details();
 	
 </head>
 
-<body onload="startTimer()"style="height: 450px;">
+<body style="height: 450px;">
+
+		<div class="container-fluid">
+				<div class="row">
+				  <div class="col-sm-3"></div>
+				  <div class="col-sm-6">
+					<form action="<%=request.getContextPath() %>/Select_Category" method="get" style="margin-top: 20px;">
+						 <center><label><font style="font-family: Monotype Corsiva; font-size: 35px; color: #333333;">Select Category</font></label></center>
+						 <br></br>
+						 <table style="width: 130">
+						 <table>
+							<tr>
+							   <td><label style="margin-left: 100px;"><font style="color: #333333;">Movie&nbsp;Category</font></label> </td>
+							   <td>
+								  <select style="width: 250px; height: 25px;" name="cat_code">
+									 <option value="Select" >Select</option>
+									 <% 
+										while(rs.next())
+										{
+										%>
+									 <option value="<%=rs.getString(1) %>" ><%=rs.getString(2) %></option>
+									 <%
+										} 
+										%> 
+								  </select>
+							</tr>
+							<tr>
+						 </table>
+						 <button type="submit" name="submit" value="Show_Products" class="shopBtn btn-block" style="margin: auto; width: 400px;">Show Movies</button>
+					  </form>
+				  </div>
+				  <div class="col-sm-3"></div>
+				</div>
+
+				
 
 	
-
-
-		
-		<div style="position: absolute; top: 30px; left: 50px;">
-			<form action="<%=request.getContextPath() %>/Select_Category" method="get">
-					
-				<center><label><font style="font-family: Monotype Corsiva; font-size: 35px; color: #333333;">Select Category</font></label></center><br></br>
-					<table style="width: 130">
-				<table>
-				
-				
-				<tr>
-							<td><label><font style="color: #333333;">Movie&nbsp;Category</font></label> </td><td>
-							<select style="width: 205px; height: 25px;" name="cat_code"> 
-							<option value="Select" >Select</option>
-							 <%	
-							  	
-								  	while(rs.next())
-								   	{
-								   	%>
-								   		<option value="<%=rs.getString(1) %>" ><%=rs.getString(2) %></option>
-							   		<%
-							   		} 
-							   		%> 
-							</select>
-						</tr>    
-						<tr>
-							
-					</table>
-					
-				
-					<button type="submit" name="submit" value="Show_Products" class="shopBtn btn-block">Show Movies</button>
-					
-					
-				
-				
-
-			</form>
-		
-		
-			
-			
 			 
-		</div>
-	
-	
-
-
-
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="<%=request.getContextPath() %>/assets/js/jquery.js"></script>

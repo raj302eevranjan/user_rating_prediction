@@ -6,7 +6,17 @@
 <head>
   <link href="<%=request.getContextPath() %>/assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Customize styles -->
-    <link href="style.css" rel="stylesheet"/>
+	<link href="style.css" rel="stylesheet"/>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!-- font awesome styles -->
 	<link href="<%=request.getContextPath() %>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 		<!--[if IE 7]>
@@ -76,57 +86,47 @@ padding:5px;
 	
 </head>
 
-<body onload="startTimer()">
-
-	
-
-
-		<center>
-		<div style="position: absolute; top: 30px; left: 60px; width: 150px;">
-			
-		
-		
-			
-			 <form action="<%=request.getContextPath() %>/Add_Item" >
-		<table border="1">
-  <tr>
-   <th><font  color="#333333;">Title</font></th>
-  
-    <th><font color="#333333;">User Name</font></th>
-    <th><font  color="#333333;">User Mail</font></th>
-      <th><font  color="#333333;">User DOB</font></th>
-  </tr>
-  <%
-  ResultSet rs1=AdminDAO.getUsers();
-	
-	int id=0;
-	String Groupname="",Groupdesc="";
-	while(rs1.next())
-	{
-		
-	   
-		%>
-  <tr>
-  <td><input type="text" value="<%=rs1.getString(2) %>" style="width: 100px;" class="input" name="item_id" ></td>
-    <td><input type="text" value="<%=rs1.getString(3) %>" style="width: 100px;" class="input" name="Item_Name" ></td>
-    <td><input type="text" value="<%=rs1.getString(4)%>" style="width: 200px;" class="input" name="Item_stock" ></td>
-      <td><input type="text" value="<%=rs1.getString(6)%>"  style="width: 100px;" class="input" name="Item_prize" ></td>
-        
-  </tr>
-  <%							
+<body>
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+				<form action="<%=request.getContextPath() %>/Add_Item" >
+						<table class="table table-bordered">
+				  <tr>
+				   <th><font  color="#333333;">Title</font></th>
+				  
+					<th><font color="#333333;">User Name</font></th>
+					<th><font  color="#333333;">User Mail</font></th>
+					  <th><font  color="#333333;">User DOB</font></th>
+				  </tr>
+				  <%
+				  ResultSet rs1=AdminDAO.getUsers();
+					
+					int id=0;
+					String Groupname="",Groupdesc="";
+					while(rs1.next())
+					{
 						
-	}
-%>
-</table>
-
-		</form>		
+					   
+						%>
+				  <tr>
+				  <td><input type="text" value="<%=rs1.getString(2) %>" style="width: 100px;" class="input" name="item_id" ></td>
+					<td><input type="text" value="<%=rs1.getString(3) %>" style="width: 100px;" class="input" name="Item_Name" ></td>
+					<td><input type="text" value="<%=rs1.getString(4)%>" style="width: 200px;" class="input" name="Item_stock" ></td>
+					  <td><input type="text" value="<%=rs1.getString(6)%>"  style="width: 100px;" class="input" name="Item_prize" ></td>
+						
+				  </tr>
+				  <%							
+										
+					}
+				%>
+				</table>
+				
+						</form>		
+				
 		</div>
-	
-	</center>
-
-
-
-
+		<div class="col-sm-2"></div>
+	</div>	
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="<%=request.getContextPath() %>/assets/js/jquery.js"></script>
 	<script src="<%=request.getContextPath() %>/assets/js/bootstrap.min.js"></script>
