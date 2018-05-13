@@ -91,7 +91,7 @@
                     <div class="col-md-4">
                         <li class="span4">
               <div class="thumbnail">
-                <a class="zoomTool" href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs1.getString(1)%>&cat_code=<%=rs1.getString(3)%>" title="add to cart"> QUICK VIEW</a>
+                <a class="zoomTool" href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs1.getString(1)%>&cat_code=<%=rs1.getString(3)%>" title="click to view"> QUICK VIEW</a>
                 <a  href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs1.getString(1)%>">
                 <img src="<%=request.getContextPath() %>/<%=cnm%>/Item_Images/<%=rs1.getString(5)%>" alt=""></a>
                 <div class="caption">

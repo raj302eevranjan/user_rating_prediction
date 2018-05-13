@@ -63,14 +63,16 @@ public class UserLogin extends HttpServlet
           
 			
 			int result=udao.checkUser(username, user_pass);
+			System.out.println(result);
+			int cat_code=udao.get_most_rated_cat_code(result);
+
+			System.out.println("the most rated category code id : "+cat_code);
 		
 			if(result>0)
 			{
-				
-				
 				ses.setAttribute("name", result);
 				
-				 rd=request.getRequestDispatcher("/user_jsp/show_all_movies.jsp?cat_code=1");
+				rd=request.getRequestDispatcher("/user_jsp/show_all_movies.jsp?cat_code="+cat_code+""); 
 				rd.forward(request, response);
 			}
 			else
