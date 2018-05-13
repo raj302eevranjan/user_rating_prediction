@@ -88,10 +88,10 @@
               </div>
             </nav>
 
-            <div class="container" id="showing_all_movie_on_login">
+            <div class="container" id="showing_all_movie_on_login" style="margin-left: 0px; margin-right: 0px;">
 
 
-            <h3> <%=cat_name %> Movies</h3>
+            <!-- <h3> <%=cat_name %> Movies</h3>
             <%
                 ResultSet rs1=AdminDAO.get_selected_category_Item_Details(cat_code);
                 int id=0;
@@ -101,48 +101,295 @@
                 {
                     String cnm=AdminDAO.getCategoryName(rs1.getString(3));
                 %>
-                    <div class="col-md-4">
-                        <li class="span4">
-              <div class="thumbnail">
-                <a class="zoomTool" href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs1.getString(1)%>&cat_code=<%=rs1.getString(3)%>" title="add to cart"> QUICK VIEW</a>
-                <a  href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs1.getString(1)%>">
-                <img src="<%=request.getContextPath() %>/<%=cnm%>/Item_Images/<%=rs1.getString(5)%>" alt=""></a>
-                <div class="caption">
-                  <h5><%=rs1.getString(2)%></h5>
-                 
-                                      <div class="left mr10 mb5">
-                                                        <a href="#" abs absolute barbecues
-                                                            Menu" data-result-type="ResCard_Menu"
-                                                            class="result-menu btn btn-small cblack"> <input type="text" class="rating rating5" readonly="readonly" value="<%=rs1.getString(6)%>" /> </a>
-                                                        
-                                                    </div>
 
-                                                    
-                                                    <div class="left mr10 mb5">
-                                                        <a href="#" title="Posted Date"
-                                                            class="result-photos btn btn-small search-result-reviews"
-                                                            data-result-type="ResCard_Photos">Rated By:<%=rs1.getString(7)%> </a>
-                                                        
-                                                    </div>
-                                                    
-                                                    <div class="clear"></div>
-                    
+                <div class="col-md-4">
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <a class="zoomTool" href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs1.getString(1)%>&cat_code=<%=rs1.getString(3)%>"
+                                title="add to cart"> QUICK VIEW</a>
+                            <a href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs1.getString(1)%>">
+                                <img src="<%=request.getContextPath() %>/<%=cnm%>/Item_Images/<%=rs1.getString(5)%>" alt="">
+                            </a>
+                            <div class="caption">
+                                <h5>
+                                    <%=rs1.getString(2)%>
+                                </h5>
                 
-            <%--    </div>
+                                <div class="left mr10 mb5">
+                                    <a href="#" abs absolute barbecues Menu " data-result-type="ResCard_Menu "
+                                                                            class="result-menu btn btn-small cblack "> <input type="text
+                                        " class="rating rating5 " readonly="readonly " value="<%=rs1.getString(6)%>" /> </a>
                 
-                  <b><span class="pull-left" style="left:1px;"><%=rs1.getString(5)%>Rs</span></b>
-              </div> --%>
-            </li>
+                                </div>
+                
+                
+                                <div class="left mr10 mb5">
+                                    <a href="#" title="Posted Date" class="result-photos btn btn-small search-result-reviews" data-result-type="ResCard_Photos">Rated By:
+                                        <%=rs1.getString(7)%>
+                                    </a>
+                
+                                </div>
+                
+                                <div class="clear"></div>
+                
+                
+                                <%--    </div>
+                                
+                                  <b><span class="pull-left" style="left:1px;"><%=rs1.getString(5)%>Rs</span>
+                                    </b>
+                            </div> --%>
+                    </li>
                     </div>
+
+
+
                 <%
               }
                 %>
 
+ -->
 
 
+                
             </div>
 
-            <div class="row">
+
+
+
+
+                <div class="container" id="Adventure_movies">
+                    <h3>
+                        <%=cat_name %> Movies</h3>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+<%
+                            int max = 3;
+                            int track = 0;
+                             ResultSet rs2=AdminDAO.get_selected_category_Item_Details(cat_code);
+                            while(rs2.next()){
+                                if(track == 0){
+                            %>
+    <li data-target="#myCarousel" data-slide-to="<%= count %>" class="active"></li>
+    <%
+                                }
+                            else{
+                            %>
+        <li data-target="#myCarousel" data-slide-to="<%= count %>"></li>
+        <%
+                            }
+                            max = max - 1;
+                            track = track + 1;
+                                }
+                            %>
+            </ol>
+
+            <div class="carousel-inner ">
+
+                    <%
+                    track = 0;
+                        ResultSet rs3=AdminDAO.get_selected_category_Item_Details(cat_code);
+                        while(rs3.next()){
+                            String cnm_slider=AdminDAO.getCategoryName(rs3.getString(3)); 
+                            track = track + 1;
+                            if(track == 1){
+                        %>
+                        <div class="item active">
+                            <div class="row" style="margin-left: 0px; margin-right: 0px;">
+                                <div class="col-sm-4">        
+                                <li class="span4" style="">
+                                    <div class="thumbnail" style="">
+                                        <a class="zoomTool" href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs3.getString(1)%>&cat_code=<%=rs3.getString(3)%>"
+                                            title="add to cart"> QUICK VIEW</a>
+                                        <a href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs3.getString(1)%>">
+                                            <img src="<%=request.getContextPath() %>/<%=cnm_slider%>/Item_Images/<%=rs3.getString(5)%>" alt="">
+                                        </a>
+                                        <div class="caption">
+                                            <div class="row">
+                                                <h5>
+                                                    <%= rs3.getString(2) %>
+                                                </h5>
+                                            </div>
+                                            <div class="row" style="text-align: center;">
+                                                <div class="col-sm-3"></div>
+                                                <div class="col-sm-6" style="margin-top: 100px;">
+                                                    <a href="#" abs absolute barbecues Menu " data-result-type="ResCard_Menu " class="result-menu btn btn-small cblack ">
+                                                                                            <input type="text " class="rating rating5 " readonly="readonly
+                                                        " value="<%=rs3.getString(6)%>" /> </a>
+                                
+                                                </div>
+                                                <div class="col-sm-3"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3"></div>
+                                                <div class="col-sm-6" style="margin-top: 50px;">
+                                                    <a href="#" title="Posted Date" class="result-photos btn btn-small search-result-reviews" data-result-type="ResCard_Photos">Rated By:
+                                                        <%=rs3.getString(7)%>
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-3"></div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="caption" style="height: 200px;">
+                                                                        <h5>
+                                                                            <%=rs3.getString(2)%>
+                                                                        </h5>
+                                                                        <div class="left mr10 mb5">
+                                                                            <a href="#" abs absolute barbecues Menu " data-result-type="ResCard_Menu" class="result-menu btn btn-small cblack "> <input type="text " class="rating rating5 " readonly="readonly" value="<%=rs3.getString(6)%>" /> </a>
+                                                                        </div>
+                                                                        <div class="left mr10 mb5">
+                                                                            <a href="#" title="Posted Date" class="result-photos btn btn-small search-result-reviews" data-result-type="ResCard_Photos">Rated By:
+                                                                            <%=rs3.getString(7)%>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="clear"></div>
+                                                                        </div> -->
+                                    </div>
+                                </li>
+                                    </div>
+                        <%
+                            }
+                            else{
+                                if(track%3 == 0){
+                        %>
+                        <div class="col-sm-4">
+                                                            <li class="span4" style="">
+                                                                <div class="thumbnail" style="">
+                                                                    <a class="zoomTool" href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs3.getString(1)%>&cat_code=<%=rs3.getString(3)%>"
+                                                                        title="add to cart"> QUICK VIEW</a>
+                                                                    <a href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs3.getString(1)%>">
+                                                                        <img src="<%=request.getContextPath() %>/<%=cnm_slider%>/Item_Images/<%=rs3.getString(5)%>" alt="">
+                                                                    </a>
+                                                                    <div class="caption">
+                                                                        <div class="row">
+                                                                            <h5>
+                                                                                <%= rs3.getString(2) %>
+                                                                            </h5>
+                                                                        </div>
+                                                                        <div class="row" style="text-align: center;">
+                                                                            <div class="col-sm-3"></div>
+                                                                            <div class="col-sm-6" style="margin-top: 100px;">
+                                                                                <a href="#" abs absolute barbecues Menu " data-result-type="ResCard_Menu " class="result-menu btn btn-small cblack ">
+                                                                                                                        <input type="text " class="rating rating5 " readonly="readonly
+                                                                                    " value="<%=rs3.getString(6)%>" /> </a>
+                                                            
+                                                                            </div>
+                                                                            <div class="col-sm-3"></div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-sm-3"></div>
+                                                                            <div class="col-sm-6" style="margin-top: 50px;">
+                                                                                <a href="#" title="Posted Date" class="result-photos btn btn-small search-result-reviews" data-result-type="ResCard_Photos">Rated By:
+                                                                                    <%=rs3.getString(7)%>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="col-sm-3"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- <div class="caption" style="height: 200px;">
+                                                                                                    <h5>
+                                                                                                        <%=rs3.getString(2)%>
+                                                                                                    </h5>
+                                                                                                    <div class="left mr10 mb5">
+                                                                                                        <a href="#" abs absolute barbecues Menu " data-result-type="ResCard_Menu" class="result-menu btn btn-small cblack "> <input type="text " class="rating rating5 " readonly="readonly" value="<%=rs3.getString(6)%>" /> </a>
+                                                                                                    </div>
+                                                                                                    <div class="left mr10 mb5">
+                                                                                                        <a href="#" title="Posted Date" class="result-photos btn btn-small search-result-reviews" data-result-type="ResCard_Photos">Rated By:
+                                                                                                        <%=rs3.getString(7)%>
+                                                                                                        </a>
+                                                                                                    </div>
+                                                                                                    <div class="clear"></div>
+                                                                                                    </div> -->
+                                                                </div>
+                                                            </li></div>
+                                </div>
+                                </div>
+                                <div class="item">
+                                <div class="row" style="margin-left: 0px; margin-right: 0px;">
+                        <%
+                                }
+                                else{
+                        %>
+                            <div class="col-sm-4">        
+                                <li class="span4" style="">
+                                    <div class="thumbnail" style="">
+                                        <a class="zoomTool" href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs3.getString(1)%>&cat_code=<%=rs3.getString(3)%>"
+                                        title="add to cart"> QUICK VIEW</a>
+                                        <a href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs3.getString(1)%>">
+                                            <img src="<%=request.getContextPath() %>/<%=cnm_slider%>/Item_Images/<%=rs3.getString(5)%>" alt="">
+                                        </a>
+                                        <div class="caption">
+                                            <div class="row">
+                                                <h5><%= rs3.getString(2) %></h5>
+                                            </div>
+                                            <div class="row" style="text-align: center;">
+                                                <div class="col-sm-3"></div> 
+                                                <div class="col-sm-6" style="margin-top: 100px;">
+                                                    <a href="#" abs absolute barbecues Menu " data-result-type="ResCard_Menu " class="result-menu btn btn-small cblack">
+                                                            <input type="text " class="rating rating5 " readonly="readonly " value="<%=rs3.getString(6)%>" /> </a>
+
+                                                </div>
+                                                <div class="col-sm-3"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3"></div>
+                                                <div class="col-sm-6" style="margin-top: 50px;">
+                                                    <a href="#" title="Posted Date" class="result-photos btn btn-small search-result-reviews" data-result-type="ResCard_Photos">Rated By:
+                                                        <%=rs3.getString(7)%>
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-3"></div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="caption" style="height: 200px;">
+                                        <h5>
+                                            <%=rs3.getString(2)%>
+                                        </h5>
+                                        <div class="left mr10 mb5">
+                                            <a href="#" abs absolute barbecues Menu " data-result-type="ResCard_Menu" class="result-menu btn btn-small cblack "> <input type="text " class="rating rating5 " readonly="readonly" value="<%=rs3.getString(6)%>" /> </a>
+                                        </div>
+                                        <div class="left mr10 mb5">
+                                            <a href="#" title="Posted Date" class="result-photos btn btn-small search-result-reviews" data-result-type="ResCard_Photos">Rated By:
+                                            <%=rs3.getString(7)%>
+                                            </a>
+                                        </div>
+                                        <div class="clear"></div>
+                                        </div> -->
+                                        </div>
+                                    </li>
+                                </div>
+                        <%
+                                }
+                            }
+                        }
+                        int rem = track%3;
+                        if(rem != 0){
+                        %>
+                                </div>
+                        <%
+                        }
+                %>
+                                </div>
+
+                        </div>
+            
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+            
+                </div>
+
+
+
+                
+                
+
+            <div class="row" style="margin-left: 0px; margin-right: 0px;">
                 <div class="col-sm-12">
                     <iframe frameborder="0" scrolling="auto" name="afrm" style="height: 500px; width: 100%;" align="middle" onload="hide_movies()">
                 </div>

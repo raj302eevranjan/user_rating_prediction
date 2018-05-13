@@ -70,7 +70,7 @@ public class UserLogin extends HttpServlet
 				
 				ses.setAttribute("name", result);
 				
-				 rd=request.getRequestDispatcher("/user_jsp/show_all_movies.jsp?cat_code=1");
+				 rd=request.getRequestDispatcher("/user_jsp/show_all_movies.jsp?cat_code=1&cat_code2=2");
 				rd.forward(request, response);
 			}
 			else
