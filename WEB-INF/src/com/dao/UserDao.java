@@ -51,15 +51,43 @@ public class UserDao
 			{
 				id=resultSet.getInt(1);
 			}
-			System.out.println("Admin Login Status : "+id);
+			System.out.println("User Login Status : "+id);
 		}
 		catch(Exception e)
 		{
-			System.out.println("Exception in AdminrDAO-->checkAdmin(String admin,String pass): "+ e);
+			System.out.println("Exception in UserDAO-->checkUser(String userid,String pass): "+ e);
 		}
 		return id;
 	}
+	public int get_most_rated_cat_code(int uid)
+	{
+		int  id=0;
+		
+		try
+		{
+			DAO dao=DAO.getInstance();
+			
+			connection=dao.connector();
+			
+			statement = connection.createStatement();
+			
+			
 	
+			resultSet = statement.executeQuery("select cat_code from m_order where user_id="+uid+" order by count(cat_code) desc limit 1" );
+			
+		
+			while(resultSet.next())
+			{
+				id=resultSet.getInt(1);
+			}
+			System.out.println("Selected category code : "+id);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception in UserDAO-->get_most_rated_cat_code(int uid) "+ e);
+		}
+		return id;
+	}
 	
 	public  boolean ChangePass1(String name,String pwd)
 	{

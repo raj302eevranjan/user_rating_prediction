@@ -4,6 +4,7 @@
 <html>
     <%@page import="java.sql.ResultSet"%>
     <%@page import="com.dao.AdminDAO"%>
+    <%@page import="java.util.Random"%>
     <head>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -42,13 +43,17 @@
     </head>
     <body onload="startTimer();">
         <%
-            String cat_code= request.getParameter("cat_code");
-            String cat_name=AdminDAO.getCategoryName(cat_code);
+            String cat_code = request.getParameter("cat_code");
+            Random rand = new Random();
+            int a = rand.nextInt(10) + 1;
+            cat_code = Integer.toString(a);
+            String cat_name = AdminDAO.getCategoryName(cat_code);
             %>
         <script type="text/javascript">
             function toggleVisibility() {
                 document.getElementById("signup").style.display = "";
             }
+            console.log("the most rated category code is"+ <%= cat_code %> );
         </script>
         <style>
             #horizontal_line{

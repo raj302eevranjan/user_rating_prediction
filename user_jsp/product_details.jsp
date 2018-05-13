@@ -133,7 +133,7 @@
           <div class="col-sm-8">
             <div class="row">
               <div class="col-sm-6">
-                <p style="font-size: 20px; text-align: center;">Recommended Items</p>
+                <p style="font-size: 20px; text-align: center;">Recommended Movie</p>
 
                   <ul class="thumbnails">
          <%
