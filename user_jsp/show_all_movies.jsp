@@ -204,7 +204,7 @@
                                 <li class="span4" style="">
                                     <div class="thumbnail" style="">
                                         <a class="zoomTool" href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs3.getString(1)%>&cat_code=<%=rs3.getString(3)%>"
-                                            title="add to cart"> QUICK VIEW</a>
+                                            title="click to view"> QUICK VIEW</a>
                                         <a href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs3.getString(1)%>">
                                             <img src="<%=request.getContextPath() %>/<%=cnm_slider%>/Item_Images/<%=rs3.getString(5)%>" alt="">
                                         </a>
@@ -260,7 +260,7 @@
                                                             <li class="span4" style="">
                                                                 <div class="thumbnail" style="">
                                                                     <a class="zoomTool" href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs3.getString(1)%>&cat_code=<%=rs3.getString(3)%>"
-                                                                        title="add to cart"> QUICK VIEW</a>
+                                                                        title="click to view"> QUICK VIEW</a>
                                                                     <a href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs3.getString(1)%>">
                                                                         <img src="<%=request.getContextPath() %>/<%=cnm_slider%>/Item_Images/<%=rs3.getString(5)%>" alt="">
                                                                     </a>
@@ -318,7 +318,7 @@
                                 <li class="span4" style="">
                                     <div class="thumbnail" style="">
                                         <a class="zoomTool" href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs3.getString(1)%>&cat_code=<%=rs3.getString(3)%>"
-                                        title="add to cart"> QUICK VIEW</a>
+                                        title="click to view"> QUICK VIEW</a>
                                         <a href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs3.getString(1)%>">
                                             <img src="<%=request.getContextPath() %>/<%=cnm_slider%>/Item_Images/<%=rs3.getString(5)%>" alt="">
                                         </a>

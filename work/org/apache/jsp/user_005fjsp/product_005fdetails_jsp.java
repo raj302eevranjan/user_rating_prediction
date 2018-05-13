@@ -259,7 +259,7 @@ public final class product_005fdetails_jsp extends org.apache.jasper.runtime.Htt
       out.print(request.getContextPath() );
       out.write("/Select_Category?submit=product_details&item_code=");
       out.print(rs4.getString(1));
-      out.write("\" title=\"add to cart\"> QUICK VIEW</a>\r\n");
+      out.write("\" title=\"click to view\"> QUICK VIEW</a>\r\n");
       out.write("            <a  href=\"product_details.html\"><img src=\"");
       out.print(request.getContextPath() );
       out.write('/');
@@ -313,7 +313,7 @@ public final class product_005fdetails_jsp extends org.apache.jasper.runtime.Htt
       out.print(request.getContextPath() );
       out.write("/Select_Category?submit=product_details&item_code=");
       out.print(rs3.getString(1));
-      out.write("\" title=\"add to cart\"> QUICK VIEW</a>\r\n");
+      out.write("\" title=\"click to view\"> QUICK VIEW</a>\r\n");
       out.write("               <a  href=\"product_details.html\"><img src=\"");
       out.print(request.getContextPath() );
       out.write('/');

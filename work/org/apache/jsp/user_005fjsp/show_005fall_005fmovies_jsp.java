@@ -179,7 +179,7 @@ public final class show_005fall_005fmovies_jsp extends org.apache.jasper.runtime
       out.print(rs1.getString(1));
       out.write("&cat_code=");
       out.print(rs1.getString(3));
-      out.write("\" title=\"add to cart\"> QUICK VIEW</a>\r\n");
+      out.write("\" title=\"click to view\"> QUICK VIEW</a>\r\n");
       out.write("                <a  href=\"");
       out.print(request.getContextPath() );
       out.write("/Select_Category?submit=product_details&item_code=");
