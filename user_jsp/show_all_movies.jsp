@@ -101,7 +101,7 @@
                 {
                     String cnm=AdminDAO.getCategoryName(rs1.getString(3));
                 %>
-                    <div class="col-md-4">
+                 <div class="col-md-4">
                         <li class="span4">
               <div class="thumbnail">
                 <a class="zoomTool" href="<%=request.getContextPath() %>/Select_Category?submit=product_details&item_code=<%=rs1.getString(1)%>&cat_code=<%=rs1.getString(3)%>" title="add to cart"> QUICK VIEW</a>
@@ -121,7 +121,7 @@
                                                     <div class="left mr10 mb5">
                                                         <a href="#" title="Posted Date"
                                                             class="result-photos btn btn-small search-result-reviews"
-                                                            data-result-type="ResCard_Photos">Rated By:<%=rs1.getString(7)%> </a>
+                                                          data-result-type="ResCard_Photos">Rated By:<%=rs1.getString(7)%> </a>
                                                         
                                                     </div>
                                                     
@@ -134,6 +134,7 @@
               </div> --%>
             </li>
                     </div>
+
                 <%
               }
                 %>
