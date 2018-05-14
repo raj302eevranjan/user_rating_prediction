@@ -20,7 +20,7 @@ public class Prepare_Predection_Datset
 		
 		
 		
-		boolean flag=Prepare_Predection_Datset.writeintofile(sb,root+"/Item_Hist_rate");  //writing to the file
+		boolean flag=Prepare_Predection_Datset.writeintofile(sb,root+"/Item_Hist_rate"); 
 		if(flag)
 		{
 		   System.out.println("====File write successfull=======");	
@@ -41,7 +41,7 @@ public class Prepare_Predection_Datset
 		
 	
 		
-		boolean flag=Prepare_Predection_Datset.writeintofile(sb,root+"/Item_Name");  //writing to the file
+		boolean flag=Prepare_Predection_Datset.writeintofile(sb,root+"/Item_Name");  
 		if(flag)
 		{
 		   System.out.println("====File write successfull=======");	

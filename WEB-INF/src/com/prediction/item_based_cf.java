@@ -1,41 +1,20 @@
 package com.prediction;
 import java.util.ArrayList;
 import java.util.HashMap;
-/**
- * This class computes item-to-item similarity between any two weathers
- * Using item_based_collaborative filtering algorithm
- * The similarity is measured by Pearson correlation
- *
- * 100000 ratings by 943 users on 1682 items
- */
 public class item_based_cf {
 	
-	/** 
-	 * @param mvoieID
-	 *            the ids of the weathers that will be computed
-	 * @param output
-	 *            the name of the output file, "user_rated_value.txt"
-	 * @param userNumber
-	 *            the number of users in the dataset
-	 * @param ratings1
-	 *            the ratings for the weather1
-	 * @param ratings2
-	 *            the ratings for the mvoie2
-	 */
-	private int weatherID1, weatherID2;
+	
+	private int movieID1, movieID2;
 	private Integer[] ratings1;
 	private Integer[] ratings2;
 	public item_based_cf(int id1, int id2){
-		weatherID1 = id1;
-		weatherID2 = id2;
-		HashMap<Integer, Integer[]> weather_rate_table = user_rated_value.weather_ratings();
-		ratings1 = weather_rate_table.get(weatherID1);
-    	ratings2 = weather_rate_table.get(weatherID2);
+		movieID1 = id1;
+		movieID2 = id2;
+		HashMap<Integer, Integer[]> movie_rate_table = user_rated_value.movie_ratings();
+		ratings1 = movie_rate_table.get(movieID1);
+    	ratings2 = movie_rate_table.get(movieID2);
 	}
 	
-	/**
-	 * Find the users who have rated both of the two weathers
-	 */
     public ArrayList<Integer> commonUser(){
     	ArrayList<Integer> user_group = new ArrayList<Integer>();
     	for(int i = 0; i < ratings1.length; i++){
@@ -44,10 +23,6 @@ public class item_based_cf {
     	}
     	return user_group;
     }
-    
-    /**
-	 * Find the average ratings for the two weathers
-	 */
     public double[] average_rating(){
     	int[] count = {0, 0};
     	double[] avg = {0, 0};
@@ -68,9 +43,7 @@ public class item_based_cf {
     	return avg;
     }
     
-    /**
-	 * Compute Pearson correlation-based similarity
-	 */
+    
     public double pearson_sim()
     {
     	ArrayList<Integer> user_group = commonUser();
