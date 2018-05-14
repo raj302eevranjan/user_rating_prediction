@@ -4,10 +4,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * This class reads a file and put each line in the file into an ArrayList
- */
-
 public class read_file {
 	
 	public static ArrayList<String[]> readInData(String filename, char c){
@@ -35,6 +31,11 @@ public class read_file {
 		catch(IOException e){
             e.printStackTrace();
         }
+		
+		for(String[] prit:list)
+			for(String abc:prit)
+	        	if(abc!=null)
+				System.out.println(abc);
 		return list;
 	}
 }
