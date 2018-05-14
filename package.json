@@ -2,7 +2,7 @@
   "name": "user_rating_application",
   "version": "1.0.0",
   "description": "The Application recomends viedos based on their ratings.",
-  "main": "index.html",
+  "main": "",
   "author": "sameer",
   "license": "MIT"
 }
