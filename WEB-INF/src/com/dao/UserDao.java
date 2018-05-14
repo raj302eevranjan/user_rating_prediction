@@ -379,7 +379,7 @@ public class UserDao
 			connection=dao.connector();
 			statement = connection.createStatement();
 			sql="select item_code from un_item_list where cat_code='"+id+"' and item_prize BETWEEN "+les+" AND "+high+" and item_code!='"+item+"' limit 3";
-			System.out.println(sql);
+//			System.out.println(sql);
 			resultSet = statement.executeQuery(sql);
 			while(resultSet.next())
 			{
@@ -405,8 +405,8 @@ public class UserDao
 			DAO dao=DAO.getInstance();
 			connection=dao.connector();
 			statement = connection.createStatement();
-			sql="select cat_code,prize from m_order where user_id='"+userid+"' order by order_id  DESC limit 1";
-			System.out.println(sql);
+			sql="select cat_code from m_order where user_id='"+userid+"' order by order_id  DESC limit 1";
+			// System.out.println(sql);
 			resultSet = statement.executeQuery(sql);
 			while(resultSet.next())
 			{
