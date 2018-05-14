@@ -2,7 +2,7 @@
   "name": "user_rating_application",
   "version": "1.0.0",
   "description": "The Application recomends viedos based on their ratings.",
-  "main": "",
+  "main": "/home/test/user_rating_prediction/work/org/apache/jsp/admin_005fjsp.java",
   "author": "sameer",
   "license": "MIT"
 }
