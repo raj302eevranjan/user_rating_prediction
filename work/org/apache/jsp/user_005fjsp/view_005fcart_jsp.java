@@ -89,7 +89,17 @@ public int convert(String str)
       out.print(request.getContextPath() );
       out.write("/assets/css/bootstrap.css\" rel=\"stylesheet\"/>\r\n");
       out.write("    <!-- Customize styles -->\r\n");
-      out.write("    <link href=\"style.css\" rel=\"stylesheet\"/>\r\n");
+      out.write("\t<link href=\"style.css\" rel=\"stylesheet\"/>\r\n");
+      out.write("\t\r\n");
+      out.write("\t<!-- Latest compiled and minified CSS -->\r\n");
+      out.write("\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n");
+      out.write("\r\n");
+      out.write("\t<!-- jQuery library -->\r\n");
+      out.write("\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("\t<!-- Latest compiled JavaScript -->\r\n");
+      out.write("\t<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\r\n");
+      out.write("\r\n");
       out.write("    <!-- font awesome styles -->\r\n");
       out.write("\t<link href=\"");
       out.print(request.getContextPath() );
@@ -147,7 +157,22 @@ if(no==1)
 
       out.write("\r\n");
       out.write("<div class=\"gradientbuttons\" id=\"message\" style=\"position:absolute;top:10px;left:380px\">\r\n");
-      out.write("\t<script type=\"text/javascript\">alert(\"Movie Rated Sucessfully\");</script>\r\n");
+      out.write("\t<script type=\"text/javascript\">\r\n");
+      out.write("\t\talert(\"Movie Rated Sucessfully\");\r\n");
+      out.write("\t\t// var view_movies_button = document.getElementById(\"view_movies_button_user\").click();\r\n");
+      out.write("\t\t// alert(\"view movies button user\");\r\n");
+      out.write("\t\tvar xhttp = new XMLHttpRequest();\r\n");
+      out.write("\t\txhttp.onreadystatechange = function () {\r\n");
+      out.write("\t\t\tif(this.readyState == 4 && this.status == 200){\r\n");
+      out.write("\t\t\t\t\r\n");
+      out.write("\t\t\t\tdocument.write(this.responseText);\r\n");
+      out.write("\t\t\t}\r\n");
+      out.write("\t\t}\r\n");
+      out.write("\t\txhttp.open(\"GET\", \"");
+      out.print(request.getContextPath() );
+      out.write("/Select_Category?submit=Display\", true);\r\n");
+      out.write("\t\txhttp.send();\r\n");
+      out.write("\t</script>\r\n");
       out.write("</div>\r\n");
 
 }
@@ -171,99 +196,162 @@ if(no==2)
       out.write("\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t\t\r\n");
-      out.write("\t\t\t\r\n");
-      out.write("\t\t\t  ");
+      out.write("\t\t\t<div class=\"container-fluid\">\r\n");
+      out.write("\t\t\t\t\t");
 
-		  
-		
 		 String item_code= "2";
-		
-		  
 			ResultSet rs1=UserDao.get_Cart_Details();
-			
+			int count = 0;
 			while(rs1.next())
-			{
-				
-			   
+			{   
+				count++;
+				if(count%2 != 0){
 		  
       out.write("\r\n");
+      out.write("\t\t  <div class=\"row\" style=\"margin-left: 0px; margin-right: 0px;\">\r\n");
+      out.write("\t\t\t<div class=\"col-sm-6\">\r\n");
+      out.write("\t\t\t\t<form class=\"form-horizontal qtyFrm\" action=\"");
+      out.print(request.getContextPath() );
+      out.write("/Select_Category\"  method=\"get\">\r\n");
+      out.write("\t\t\t\t\t<div>\r\n");
       out.write("\t\t\t\r\n");
-      out.write("\t\t\t\r\n");
+      out.write("\t\t\t<div class=\"well well-small\">\r\n");
+      out.write("\t\t\t<div class=\"row-fluid\">\r\n");
+      out.write("\t\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t\t<h3 style=\"text-align: center;\">Name of the Movie   ");
+      out.print(rs1.getString(3));
+      out.write("</h3>\r\n");
+      out.write("\t\t\t\t\t\t<hr class=\"soft\"/>  \r\n");
+      out.write("\t\t\t\t\t\t<input type=\"hidden\" name=\"cart_id\" value=\"");
+      out.print(rs1.getString(1));
+      out.write("\">\r\n");
+      out.write("\t\t\t\t\t\t<input type=\"hidden\" name=\"item_id\" value=\"");
+      out.print(rs1.getString(4));
+      out.write("\">\r\n");
+      out.write("\t\t\t\t\t\t<input type=\"hidden\" name=\"cat_id\" value=\"");
+      out.print(rs1.getString(5));
+      out.write("\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t<div id=\"myTabContent\" class=\"tab-content tabWrapper\">\r\n");
+      out.write("\t\t\t\t\t<div class=\"tab-pane fade active in\" id=\"home\">\r\n");
+      out.write("\t\t\t\t\t  <h4>Movie Information</h4>\r\n");
+      out.write("\t\t\t\t\t\t<table class=\"table table-striped\">\r\n");
+      out.write("\t\t\t\t\t\t<tbody>\r\n");
+      out.write("\t\t\t\t\t\t<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Name of the Movie :</td><td class=\"techSpecTD2\">");
+      out.print(rs1.getString(3));
+      out.write("</td></tr>\r\n");
+      out.write("\t\t\t\t\t\t<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Movie Collection:</td><td class=\"techSpecTD2\">");
+      out.print(rs1.getString(6));
+      out.write("</td></tr>\r\n");
+      out.write("\t\t\t\t\t\t");
+      out.write("\r\n");
+      out.write("\t\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t\t<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Rate It:</td><td class=\"techSpecTD2\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"left mr10 mb5\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" abs absolute barbecues\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMenu\" data-result-type=\"ResCard_Menu\"\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tclass=\"result-menu btn btn-small cblack\"> <input type=\"text\" name=\"user_rate\" class=\"rating rating5\"   /> </a>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td></tr>\r\n");
+      out.write("\t\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t\t</tbody>\r\n");
+      out.write("\t\t\t\t\t\t</table>\r\n");
+      out.write("\t\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t\t<div class=\"row\" style=\"text-align: center; margin-top: 20px;\">\r\n");
+      out.write("\t\t\t\t\t\t\t<button type=\"submit\" class=\"shopBtn\" name=\"submit\" value=\"Buy\">Rate</button>\r\n");
+      out.write("\t\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t\t\t<!-- <button type=\"submit\" class=\"shopBtn\" name=\"submit\" value=\"Remove\"><span class=\" icon-shopping-cart\"></span>Remove</button>\r\n");
+      out.write("\t\t\t\t\t -->\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t\t\r\n");
+      out.write("\t\t\r\n");
+      out.write("\t\t</form>\r\n");
+      out.write("\t\t\t  </div>\r\n");
+      out.write("\t\t  ");
+
+				}
+				else{
+		  
+      out.write("\r\n");
+      out.write("\t\t  <div class=\"col-sm-6\">\r\n");
       out.write("\t\t\t<form class=\"form-horizontal qtyFrm\" action=\"");
       out.print(request.getContextPath() );
       out.write("/Select_Category\"  method=\"get\">\r\n");
       out.write("\t\t\t\r\n");
-      out.write("\t\t\t<div class=\"span9\">\r\n");
-      out.write("    \r\n");
-      out.write("\t<div class=\"well well-small\">\r\n");
-      out.write("\t<div class=\"row-fluid\">\r\n");
-      out.write("\t\t\t\r\n");
-      out.write("\t\t\t<div class=\"span7\">\r\n");
-      out.write("\t\t\t\r\n");
-      out.write("\t\t\t\t<h3>Name of the Movie   ");
+      out.write("\t\t\t\t<div>\r\n");
+      out.write("\t\t\r\n");
+      out.write("\t\t<div class=\"well well-small\">\r\n");
+      out.write("\t\t<div class=\"row-fluid\">\r\n");
+      out.write("\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t<h3 style=\"text-align: center;\">Name of the Movie   ");
       out.print(rs1.getString(3));
       out.write("</h3>\r\n");
-      out.write("\t\t\t\t<hr class=\"soft\"/>\r\n");
-      out.write("\t\t\t\t\r\n");
-      out.write("\t\t\t\t  \r\n");
-      out.write("\t\t\t\t  \r\n");
-      out.write("\t\t\t\t<input type=\"hidden\" name=\"cart_id\" value=\"");
+      out.write("\t\t\t\t\t<hr class=\"soft\"/>  \r\n");
+      out.write("\t\t\t\t\t<input type=\"hidden\" name=\"cart_id\" value=\"");
       out.print(rs1.getString(1));
       out.write("\">\r\n");
-      out.write("\t\t\t\t<input type=\"hidden\" name=\"item_id\" value=\"");
+      out.write("\t\t\t\t\t<input type=\"hidden\" name=\"item_id\" value=\"");
       out.print(rs1.getString(4));
       out.write("\">\r\n");
-      out.write("\t\t\t\t<input type=\"hidden\" name=\"cat_id\" value=\"");
+      out.write("\t\t\t\t\t<input type=\"hidden\" name=\"cat_id\" value=\"");
       out.print(rs1.getString(5));
       out.write("\">\r\n");
-      out.write("\t\t\t\t\t\r\n");
-      out.write("\t\t\t</div>\r\n");
-      out.write("\t\t\t\r\n");
-      out.write("\t\t\t\r\n");
-      out.write("\t\t\t</div>\r\n");
-      out.write("\t\t\t\r\n");
-      out.write("\t\t\t<div id=\"myTabContent\" class=\"tab-content tabWrapper\">\r\n");
-      out.write("            <div class=\"tab-pane fade active in\" id=\"home\">\r\n");
-      out.write("\t\t\t  <h4>Movie Information</h4>\r\n");
-      out.write("                <table class=\"table table-striped\">\r\n");
-      out.write("\t\t\t\t<tbody>\r\n");
-      out.write("\t\t\t\t<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Name of the Movie :</td><td class=\"techSpecTD2\">");
+      out.write("\t\t\t\t\t\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\r\n");
+      out.write("\t\t\t\t<div id=\"myTabContent\" class=\"tab-content tabWrapper\">\r\n");
+      out.write("\t\t\t\t<div class=\"tab-pane fade active in\" id=\"home\">\r\n");
+      out.write("\t\t\t\t  <h4>Movie Information</h4>\r\n");
+      out.write("\t\t\t\t\t<table class=\"table table-striped\">\r\n");
+      out.write("\t\t\t\t\t<tbody>\r\n");
+      out.write("\t\t\t\t\t<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Name of the Movie :</td><td class=\"techSpecTD2\">");
       out.print(rs1.getString(3));
       out.write("</td></tr>\r\n");
-      out.write("\t\t\t\t<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Movie Collection:</td><td class=\"techSpecTD2\">");
+      out.write("\t\t\t\t\t<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Movie Collection:</td><td class=\"techSpecTD2\">");
       out.print(rs1.getString(6));
       out.write("</td></tr>\r\n");
-      out.write("\t\t\t\t");
+      out.write("\t\t\t\t\t");
       out.write("\r\n");
-      out.write("\t\t\t\t\r\n");
-      out.write("\t\t\t\t<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Rate It:</td><td class=\"techSpecTD2\">\r\n");
-      out.write("\t\t\t\t                                    <div class=\"left mr10 mb5\">\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" abs absolute barbecues\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMenu\" data-result-type=\"ResCard_Menu\"\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tclass=\"result-menu btn btn-small cblack\"> <input type=\"text\" name=\"user_rate\" class=\"rating rating5\"   /> </a>\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t</td></tr>\r\n");
-      out.write("\t\t\t\t\r\n");
-      out.write("\t\t\t\t</tbody>\r\n");
-      out.write("\t\t\t\t</table>\r\n");
-      out.write("\t\t\t\t</div>\r\n");
-      out.write("\t\t\t\t</div>\r\n");
-      out.write("\t\t\t\t\r\n");
-      out.write("\t\t\t\t<button type=\"submit\" class=\"shopBtn\" name=\"submit\" value=\"Buy\"><span class=\" icon-shopping-cart\"></span>Rate</button>\r\n");
-      out.write("\t\t\t\t\r\n");
-      out.write("\t\t\t\t\t<!-- <button type=\"submit\" class=\"shopBtn\" name=\"submit\" value=\"Remove\"><span class=\" icon-shopping-cart\"></span>Remove</button>\r\n");
-      out.write("\t\t\t -->\r\n");
-      out.write("</div>\r\n");
-      out.write("</div>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("</form>\r\n");
+      out.write("\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t<tr class=\"techSpecRow\"><td class=\"techSpecTD1\">Rate It:</td><td class=\"techSpecTD2\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"left mr10 mb5\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" abs absolute barbecues\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMenu\" data-result-type=\"ResCard_Menu\"\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tclass=\"result-menu btn btn-small cblack\"> <input type=\"text\" name=\"user_rate\" class=\"rating rating5\"   /> </a>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t</td></tr>\r\n");
+      out.write("\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t\t</tbody>\r\n");
+      out.write("\t\t\t\t\t</table>\r\n");
+      out.write("\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t<div class=\"row\" style=\"text-align: center; margin-top: 20px;\">\r\n");
+      out.write("\t\t\t\t\t\t<button type=\"submit\" class=\"shopBtn\" name=\"submit\" value=\"Buy\">Rate</button>\r\n");
+      out.write("\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t\t<!-- <button type=\"submit\" class=\"shopBtn\" name=\"submit\" value=\"Remove\"><span class=\" icon-shopping-cart\"></span>Remove</button>\r\n");
+      out.write("\t\t\t\t -->\r\n");
+      out.write("\t</div>\r\n");
+      out.write("\t</div>\r\n");
+      out.write("\t\r\n");
+      out.write("\t\r\n");
+      out.write("\t</form>\r\n");
+      out.write("\t\t  </div>\r\n");
+      out.write("\t\t  </div>\r\n");
+      out.write("\t\t  <hr style=\"margin-top: 0px;\">\r\n");
       out.write("            ");
 
 			}
+		}
 			
       out.write("\r\n");
+      out.write("\t\t\t\t<!-- </div> -->\r\n");
+      out.write("\t\t\t</div>\r\n");
       out.write("\t\t\r\n");
       out.write("\t\r\n");
       out.write("\t<script src=\"");

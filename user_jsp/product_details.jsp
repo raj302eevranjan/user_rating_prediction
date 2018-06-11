@@ -215,7 +215,7 @@
             %>
       </ul>
               </div>
-              <div class="col-sm-6">right part</div>
+              <div class="col-sm-6"></div>
             </div>
           </div>
         </div>

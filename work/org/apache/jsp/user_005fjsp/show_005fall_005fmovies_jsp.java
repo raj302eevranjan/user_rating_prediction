@@ -150,7 +150,7 @@ public final class show_005fall_005fmovies_jsp extends org.apache.jasper.runtime
       out.write("                <ul class=\"nav navbar-nav\">\r\n");
       out.write("                  <li class=\"active\"><a href=\"");
       out.print(request.getContextPath() );
-      out.write("/Select_Category?submit=Display\" target=\"afrm\" >View Movies</a> </li>\r\n");
+      out.write("/Select_Category?submit=Display\" target=\"afrm\" id=\"view_movies_button_user\">View Movies</a> </li>\r\n");
       out.write("                </ul>\r\n");
       out.write("                <ul class=\"nav navbar-nav navbar-right\">\r\n");
       out.write("                <li class=\"active\"><a href=\"");
@@ -592,7 +592,7 @@ public final class show_005fall_005fmovies_jsp extends org.apache.jasper.runtime
       out.write("                \r\n");
       out.write("                \r\n");
       out.write("\r\n");
-      out.write("            <div class=\"row\" style=\"margin-left: 0px; margin-right: 0px;\">\r\n");
+      out.write("            <div class=\"row\" style=\"margin-left: 0px; margin-right: 0px;\" id=\"target_afrm\">\r\n");
       out.write("                <div class=\"col-sm-12\">\r\n");
       out.write("                    <iframe frameborder=\"0\" scrolling=\"auto\" name=\"afrm\" style=\"height: 500px; width: 100%;\" align=\"middle\" onload=\"hide_movies()\">\r\n");
       out.write("                </div>\r\n");

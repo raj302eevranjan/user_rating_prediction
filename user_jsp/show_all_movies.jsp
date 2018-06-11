@@ -84,7 +84,7 @@
                   <a class="navbar-brand" href="#">MOVIE RECOMMENDATION SYSTEM</a>
                 </div>
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="<%=request.getContextPath() %>/Select_Category?submit=Display" target="afrm" >View Movies</a> </li>
+                  <li class="active"><a href="<%=request.getContextPath() %>/Select_Category?submit=Display" target="afrm" id="view_movies_button_user">View Movies</a> </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="<%=request.getContextPath() %>/Change_User_Pass?submit=change" target="afrm" >Change Password</a> </li>
@@ -394,7 +394,7 @@
                 
                 
 
-            <div class="row" style="margin-left: 0px; margin-right: 0px;">
+            <div class="row" style="margin-left: 0px; margin-right: 0px;" id="target_afrm">
                 <div class="col-sm-12">
                     <iframe frameborder="0" scrolling="auto" name="afrm" style="height: 500px; width: 100%;" align="middle" onload="hide_movies()">
                 </div>

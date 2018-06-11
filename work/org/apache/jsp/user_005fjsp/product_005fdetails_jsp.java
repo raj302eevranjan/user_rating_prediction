@@ -137,10 +137,8 @@ public final class product_005fdetails_jsp extends org.apache.jasper.runtime.Htt
                       String Groupname="",Groupdesc="";
                       while(rs1.next())
                       {
-                        
                         prizes=rs1.getString(5);
                         rate=rs1.getString(7);
-                      
                       
       out.write("\r\n");
       out.write("\r\n");
@@ -233,7 +231,7 @@ public final class product_005fdetails_jsp extends org.apache.jasper.runtime.Htt
       out.write("          <div class=\"col-sm-8\">\r\n");
       out.write("            <div class=\"row\">\r\n");
       out.write("              <div class=\"col-sm-6\">\r\n");
-      out.write("                <p style=\"font-size: 20px; text-align: center;\">Recommended Items</p>\r\n");
+      out.write("                <p style=\"font-size: 20px; text-align: center;\">Recommended Movie</p>\r\n");
       out.write("\r\n");
       out.write("                  <ul class=\"thumbnails\">\r\n");
       out.write("         ");
@@ -351,7 +349,7 @@ public final class product_005fdetails_jsp extends org.apache.jasper.runtime.Htt
       out.write("\r\n");
       out.write("      </ul>\r\n");
       out.write("              </div>\r\n");
-      out.write("              <div class=\"col-sm-6\">right part</div>\r\n");
+      out.write("              <div class=\"col-sm-6\"></div>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("        </div>\r\n");

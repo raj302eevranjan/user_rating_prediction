@@ -44,8 +44,6 @@ public class Select_Category extends HttpServlet
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				
-				
 			}
 		 
 		 
@@ -72,8 +70,6 @@ public class Select_Category extends HttpServlet
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				
-				
 			}
 		 
 		 

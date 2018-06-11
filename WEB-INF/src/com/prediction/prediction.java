@@ -17,6 +17,7 @@ public class prediction
 
 		ArrayList<Double> similarity = new ArrayList<Double>();
 		ArrayList<Integer> ratings = new ArrayList<Integer>();
+		
 		for(int i = 0; i < user_ratings.length; i++)
 		{
 			if(user_ratings[i] != 0)
@@ -44,6 +45,7 @@ public class prediction
 	public int recommendation(String root){
 		ArrayList<String[]> test = read_file.readInData(datasetname, '\t');
 		ArrayList<Integer[]> predicts = new ArrayList<Integer[]>();
+		double val=0.3,val1=5;
 		for(int i = 0; i < test.size(); i++)
 		{
 			String s[]=test.get(i)[0].split(",");
@@ -64,12 +66,12 @@ public class prediction
 		{
 			upper += Math.pow((predicts.get(i)[1] - predicts.get(i)[0]), 2);
 		}
-		double rsme = Math.sqrt(upper / predicts.size());
+		double predictVal = Math.sqrt(upper / predicts.size());
 	
-		System.out.println("prediction: " + rsme);
-		System.out.println("Root Mean Square Error: " + (5 - rsme ) );
+		System.out.println("prediction: " + predictVal);
 		
-		prediclist.add(rsme);
+		
+		prediclist.add(predictVal);
 		ArrayList<Integer[]> predict_sorting = new ArrayList<Integer[]>();
 		for(int i = 0; i < predicts.size(); i++){
 			Integer[] pair = {predicts.get(i)[0], predicts.get(i)[2]};

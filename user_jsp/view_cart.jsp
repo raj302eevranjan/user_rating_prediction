@@ -82,7 +82,20 @@ if(no==1)
 {
 %>
 <div class="gradientbuttons" id="message" style="position:absolute;top:10px;left:380px">
-	<script type="text/javascript">alert("Movie Rated Sucessfully");</script>
+	<script type="text/javascript">
+		alert("Movie Rated Sucessfully");
+		// var view_movies_button = document.getElementById("view_movies_button_user").click();
+		// alert("view movies button user");
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function () {
+			if(this.readyState == 4 && this.status == 200){
+				
+				document.write(this.responseText);
+			}
+		}
+		xhttp.open("GET", "<%=request.getContextPath() %>/Select_Category?submit=Display", true);
+		xhttp.send();
+	</script>
 </div>
 <%
 }
